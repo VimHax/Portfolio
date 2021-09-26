@@ -1,0 +1,160 @@
+.Website {
+	height: 100%;
+	width: fit-content;
+	display: flex;
+	align-items: center;
+
+	@media screen and (max-width: 1150px) {
+		display: none;
+		height: 300px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	@media screen and (max-width: 650px) {
+		width: 86vw;
+		height: calc((86vw / 16) * 9);
+	}
+
+	.Container {
+		width: 730px;
+		height: 100%;
+		margin: 0;
+		margin-left: 7vw;
+		margin-top: 10vh;
+		position: relative;
+
+		@media screen and (max-width: 1650px) {
+			width: 635px;
+		}
+
+		@media screen and (max-width: 1400px) {
+			width: 515px;
+			margin-left: 3vw;
+		}
+
+		@media screen and (max-width: 1150px) {
+			margin-top: 0;
+			margin-left: 0;
+		}
+
+		@media screen and (max-width: 650px) {
+			width: 100%;
+		}
+
+		img {
+			position: absolute;
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+				rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+				rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+			&.One {
+				top: calc(50vh - (650px / 16) * 4.5);
+				width: 730px;
+				border: 5px solid;
+				border-image: linear-gradient(to top left, #1500ff, #ff0062) 30;
+				box-shadow: #1500ff44 0px 54px 55px, #ff005d44 0px -12px 30px,
+					#ff005d44 0px 4px 6px, #1500ff44 0px 12px 13px, #ff005d44 0px -3px 5px;
+				@media screen and (max-width: 1650px) {
+					top: calc(50vh - (635px / 16) * 4.5);
+					width: 635px;
+					border: 3px solid;
+					border-image: linear-gradient(to top left, #1500ff, #ff0062) 30;
+				}
+				@media screen and (max-width: 1400px) {
+					width: 515px;
+				}
+				@media screen and (max-width: 1150px) {
+					width: 515px;
+					top: 0;
+					box-shadow: #1500ff27 0px 54px 55px, #ff005d44 0px -12px 30px,
+						#ff005d44 0px 4px 6px, #1500ff44 0px 12px 13px,
+						#ff005d44 0px -3px 5px;
+				}
+				@media screen and (max-width: 650px) {
+					width: 100%;
+				}
+			}
+
+			&.Two {
+				top: calc(50vh - (400px / 16) * 4.5 - 100px);
+				left: calc(0px - 50px);
+				width: 400px;
+				filter: brightness(0.5) blur(3px);
+				@media screen and (max-width: 1650px) {
+					width: 350px;
+				}
+				@media screen and (max-width: 1400px) {
+					width: 300px;
+					top: calc(50vh - (400px / 16) * 4.5 - 80px);
+					left: calc(0px - 30px);
+				}
+				@media screen and (max-width: 1150px) {
+					display: none;
+				}
+			}
+
+			&.Three {
+				bottom: calc(50vh - (400px / 16) * 4.5 - 130px);
+				right: calc(0px - 50px);
+				width: 400px;
+				filter: brightness(0.5) blur(2px);
+				@media screen and (max-width: 1650px) {
+					width: 300px;
+					bottom: calc(50vh - (400px / 16) * 4.5 - 100px);
+					right: calc(0px - 30px);
+				}
+				@media screen and (max-width: 1400px) {
+					bottom: calc(50vh - (400px / 16) * 4.5 - 10px);
+					right: calc(0px - 30px);
+				}
+				@media screen and (max-width: 1150px) {
+					display: none;
+				}
+			}
+
+			&.Four {
+				bottom: calc(50vh - (400px / 16) * 4.5 - 150px);
+				left: calc(0px - 30px);
+				width: 350px;
+				filter: brightness(0.5) blur(5px);
+				@media screen and (max-width: 1650px) {
+					bottom: calc(50vh - (400px / 16) * 4.5 - 100px);
+					width: 300px;
+				}
+				@media screen and (max-width: 1400px) {
+					width: 250px;
+					bottom: calc(50vh - (400px / 16) * 4.5 - 60px);
+				}
+				@media screen and (max-width: 1150px) {
+					display: none;
+				}
+			}
+
+			&.Five {
+				top: calc(50vh - (400px / 16) * 4.5 - 150px);
+				right: calc(0px - 50px);
+				width: 350px;
+				filter: brightness(0.5) blur(4px);
+				@media screen and (max-width: 1650px) {
+					width: 300px;
+					top: calc(50vh - (400px / 16) * 4.5 - 140px);
+					right: calc(0px - 50px);
+				}
+				@media screen and (max-width: 1400px) {
+					width: 250px;
+					right: calc(0px - 20px);
+				}
+				@media screen and (max-width: 1150px) {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.GMoss {
+	display: flex;
+	width: 100vw;
+	background-image: linear-gradient(to bottom, #03002c, #060056);
+}

@@ -1,0 +1,180 @@
+@keyframes FadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes SlideIn {
+	from {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+#SidePanel {
+	width: 0px;
+	position: fixed;
+	z-index: 2;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: #050505aa;
+	backdrop-filter: blur(10px);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+
+	a {
+		font-family: 'Nunito', sans-serif;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 2px;
+		color: white;
+		transition: all 0.25s;
+		display: block;
+		white-space: nowrap;
+		padding: 15px 20px;
+		text-decoration: none;
+	}
+
+	#Close {
+		position: absolute;
+		top: 0;
+		right: 0px;
+		font-size: 20px;
+	}
+}
+
+.HeroBackground {
+	opacity: 0;
+	animation: FadeIn 0.5s 0s ease-out forwards;
+}
+
+.Hero {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.Title {
+		color: white;
+		font-size: 60px;
+		text-transform: uppercase;
+		letter-spacing: 15px;
+		font-family: 'Montserrat', sans-serif;
+		opacity: 0;
+		animation: FadeIn 0.5s 0.5s ease-out forwards;
+		@media screen and (max-width: 800px) {
+			font-size: 40px;
+			letter-spacing: 10px;
+		}
+		@media screen and (max-width: 650px) {
+			font-size: 9vw;
+			letter-spacing: 2vw;
+		}
+	}
+
+	button.Menu {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 20px;
+		background: none;
+		border: none;
+		animation: SlideIn 0.5s ease forwards;
+		opacity: 0;
+		animation-delay: 0.75s;
+
+		@media screen and (max-width: 650px) {
+			display: block;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		img {
+			width: 25px;
+			filter: invert(1);
+		}
+	}
+
+	.Navbar {
+		position: absolute;
+		top: 0;
+		left: 5px;
+		width: 100vw;
+		font-family: 'Nunito', sans-serif;
+
+		@media screen and (max-width: 650px) {
+			display: none;
+		}
+
+		ul {
+			padding: 0;
+			padding-left: 60px;
+			margin: 0;
+			@for $i from 1 through 6 {
+				li:nth-child(#{$i}n) {
+					animation-delay: #{$i * 0.1 + 0.75}s;
+				}
+			}
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding: 20px;
+				width: 25px;
+			}
+
+			li {
+				opacity: 0;
+				animation: SlideIn 0.5s ease forwards;
+				padding: 30px;
+				display: inline-block;
+
+				// Nice line movement - Bruno Almeida
+				// https://gist.github.com/CodeMyUI/8bc31725c1f673a4349bc5e673bbc33f
+				a {
+					font-weight: bold;
+					text-decoration: none;
+					color: white;
+					text-transform: uppercase;
+					letter-spacing: 3px;
+					position: relative;
+
+					&:hover {
+						padding: 0;
+						background: none;
+
+						&::after {
+							width: 100%;
+							left: 0;
+						}
+					}
+
+					&::after {
+						content: '';
+						position: absolute;
+						top: calc(100%);
+						width: 0;
+						right: 0;
+						height: 3px;
+						transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+						background: #ff0062;
+					}
+				}
+			}
+		}
+	}
+}

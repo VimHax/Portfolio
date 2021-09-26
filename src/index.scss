@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito&family=Roboto+Mono&display=swap');
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	background: black;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #222;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-image: linear-gradient(to bottom, #ff2f7f, #ff0062);
+}
+
+// Syntax theme for the code snippets //
+
+.kwToken {
+	color: #3ab7ff;
+}
+
+.dtToken {
+	color: #b73aff;
+}
+
+.idenToken {
+	color: white;
+}
+
+.symToken {
+	color: #ff005d;
+}
+
+.opToken {
+	color: #0077ff;
+}
+
+.litToken {
+	color: white;
+}
+
+p {
+	color: white;
+	font-size: 20px;
+	font-family: 'Nunito', sans-serif;
+	@media screen and (max-width: 1650px) {
+		font-size: 17px;
+	}
+	@media screen and (max-width: 650px) {
+		font-size: 15px;
+	}
+}
+
+a {
+	color: #ff005d;
+	text-decoration: none;
+	font-weight: bold;
+	transition: all 0.1s ease-in-out;
+	&:hover {
+		padding-left: 5px;
+		padding-right: 5px;
+		color: white;
+		background-color: #ff005d;
+		@media screen and (max-width: 1650px) {
+			padding-left: 3px;
+			padding-right: 3px;
+		}
+	}
+}
+
+// Buttons inside links //
+
+a.Button {
+	text-decoration: none;
+
+	&:hover {
+		padding: 0;
+		background: none;
+	}
+
+	button {
+		background-color: #00000000;
+		border: 2px solid white;
+		padding: 0;
+		height: 60px;
+		transition: all 0.2s ease-in-out;
+
+		@media screen and (max-width: 1650px) {
+			height: 50px;
+		}
+
+		@media screen and (max-width: 650px) {
+			height: 40px;
+		}
+
+		.ButtonContent {
+			height: 100%;
+			display: flex;
+
+			.Logo {
+				height: 100%;
+				aspect-ratio: 1/1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				img {
+					width: 30px;
+					@media screen and (max-width: 1650px) {
+						width: 25px;
+					}
+					@media screen and (max-width: 650px) {
+						width: 20px;
+					}
+				}
+			}
+
+			.Text {
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				span {
+					margin: 15px;
+					margin-left: 0;
+					color: white;
+					font-size: 15px;
+					text-transform: uppercase;
+					letter-spacing: 2.5px;
+					font-family: 'Montserrat', sans-serif;
+					@media screen and (max-width: 1650px) {
+						font-size: 13px;
+					}
+					@media screen and (max-width: 650px) {
+						font-size: 10px;
+						margin: 10px;
+						margin-left: 0;
+					}
+				}
+			}
+		}
+
+		&:hover {
+			cursor: pointer;
+			background-color: #950037;
+			border: 2px solid #ff005d;
+		}
+
+		&:focus {
+			border: 2px solid #ff005d;
+		}
+	}
+}
+
+// The fancy button animation (Shutter Out Vertical) //
+// Code from Hover.css, https://ianlunn.github.io/Hover/. (Stripped down for this purpose)
+// https://github.com/IanLunn/Hover/blob/b6e9a10c9a23db4926779cf00b320c2ee1a4f507/css/hover.css#L1872-L1912
+.hvr-shutter-out-vertical {
+	transform: perspective(1px) translateZ(0);
+}
+.hvr-shutter-out-vertical:before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #ff005d;
+	transform: scaleY(0);
+	transform-origin: 50%;
+	transition-property: transform;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-out;
+}
+.hvr-shutter-out-vertical:hover:before,
+.hvr-shutter-out-vertical:focus:before,
+.hvr-shutter-out-vertical:active:before {
+	transform: scaleY(1);
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	color: white;
+	font-family: 'Nunito', sans-serif;
+}
+
+// Background for each section //
+
+.Background {
+	object-fit: cover;
+	object-position: bottom;
+	width: 100vw;
+	height: fit-content !important;
+}
+
+// The description provided in each section //
+
+.Description {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding-left: 7vw;
+	padding-right: 7vw;
+	margin-top: 20vh;
+	margin-bottom: 20vh;
+
+	@media screen and (max-width: 1400px) {
+		padding-left: 3vw;
+		padding-right: 3vw;
+	}
+
+	@media screen and (max-width: 1150px) {
+		padding-left: 10%;
+		padding-right: 10%;
+		margin-top: 10vh;
+		margin-bottom: 10vh;
+	}
+
+	@media screen and (max-width: 800px) {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.Content {
+		z-index: 1;
+
+		@media screen and (max-width: 1400px) {
+			br {
+				content: '';
+			}
+		}
+
+		.Title {
+			color: white;
+			font-size: 60px;
+			text-transform: uppercase;
+			letter-spacing: 15px;
+			font-family: 'Montserrat', sans-serif;
+			@media screen and (max-width: 1650px) {
+				font-size: 50px;
+				letter-spacing: 13px;
+			}
+		}
+
+		.SubTitle {
+			color: #ff005d;
+			font-size: 20px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			font-family: 'Montserrat', sans-serif;
+			@media screen and (max-width: 1650px) {
+				font-size: 15px;
+				letter-spacing: 2px;
+			}
+		}
+	}
+}
+
+.Reappear {
+	@media screen and (max-width: 1150px) {
+		display: flex !important;
+	}
+}

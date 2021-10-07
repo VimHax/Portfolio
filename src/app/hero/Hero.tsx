@@ -37,21 +37,34 @@ export default function Hero(): JSX.Element {
 						<ul>
 							<img src="/logo.svg" alt="Logo" />
 							<li>
-								<a href="#ares">Ares</a>
+								<a href="#ares" style={{ margin: '0px' }}>
+									Ares
+								</a>
 							</li>
 							<li>
-								<a href="#eelios">Eelios</a>
+								<a href="#eelios" style={{ margin: '0px' }}>
+									Eelios
+								</a>
 							</li>
 							<li>
-								<a href="#gmoss">G-Moss</a>
+								<a href="#gmoss" style={{ margin: '0px' }}>
+									G-Moss
+								</a>
 							</li>
 							<li>
-								<a href="#about">About</a>
+								<a href="#about" style={{ margin: '0px' }}>
+									About
+								</a>
+							</li>
+							<li>
+								<a href="#feedback" style={{ margin: '0px' }}>
+									Feedback
+								</a>
 							</li>
 						</ul>
 					</div>
-					<button
-						className="Menu"
+					<div
+						id="menu"
 						onClick={() => {
 							const sidePanel = document.getElementById('SidePanel');
 							if (sidePanel) {
@@ -61,7 +74,7 @@ export default function Hero(): JSX.Element {
 						}}
 					>
 						<img src="/menu.svg" alt="Menu" />
-					</button>
+					</div>
 					<div className="Title">VimProjects</div>
 				</div>
 			</ParallaxBanner>
@@ -83,6 +96,7 @@ export default function Hero(): JSX.Element {
 				<a href="#eelios">Eelios</a>
 				<a href="#gmoss">G-Moss</a>
 				<a href="#about">About</a>
+				<a href="#feedback">Feedback</a>
 			</div>
 		</div>
 	);

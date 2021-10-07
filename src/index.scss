@@ -52,7 +52,8 @@ html {
 	color: white;
 }
 
-p {
+p,
+.Goals {
 	color: white;
 	font-size: 20px;
 	font-family: 'Nunito', sans-serif;
@@ -72,11 +73,15 @@ a {
 	&:hover {
 		padding-left: 5px;
 		padding-right: 5px;
+		margin-left: -5px;
+		margin-right: -5px;
 		color: white;
 		background-color: #ff005d;
 		@media screen and (max-width: 1650px) {
 			padding-left: 3px;
 			padding-right: 3px;
+			margin-left: -3px;
+			margin-right: -3px;
 		}
 	}
 }
@@ -89,90 +94,96 @@ a.Button {
 	&:hover {
 		padding: 0;
 		background: none;
+		margin: 0;
+	}
+}
+
+button {
+	background-color: #00000000;
+	border: 2px solid white;
+	padding: 0;
+	height: 60px;
+	transition: all 0.2s ease-in-out;
+
+	@media screen and (max-width: 1650px) {
+		height: 50px;
 	}
 
-	button {
-		background-color: #00000000;
-		border: 2px solid white;
-		padding: 0;
-		height: 60px;
-		transition: all 0.2s ease-in-out;
+	@media screen and (max-width: 650px) {
+		height: 40px;
+	}
 
-		@media screen and (max-width: 1650px) {
-			height: 50px;
+	.ButtonContent {
+		height: 100%;
+		display: flex;
+
+		.Logo {
+			height: 100%;
+			aspect-ratio: 1/1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			img {
+				width: 30px;
+				@media screen and (max-width: 1650px) {
+					width: 25px;
+				}
+				@media screen and (max-width: 650px) {
+					width: 20px;
+				}
+			}
 		}
 
-		@media screen and (max-width: 650px) {
-			height: 40px;
-		}
-
-		.ButtonContent {
+		.Text {
 			height: 100%;
 			display: flex;
+			justify-content: center;
+			align-items: center;
 
-			.Logo {
-				height: 100%;
-				aspect-ratio: 1/1;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-				img {
-					width: 30px;
-					@media screen and (max-width: 1650px) {
-						width: 25px;
-					}
-					@media screen and (max-width: 650px) {
-						width: 20px;
-					}
+			span {
+				margin: 15px;
+				margin-left: 0;
+				color: white;
+				font-size: 15px;
+				text-transform: uppercase;
+				letter-spacing: 2.5px;
+				font-family: 'Montserrat', sans-serif;
+				@media screen and (max-width: 1650px) {
+					font-size: 13px;
 				}
-			}
-
-			.Text {
-				height: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-				span {
-					margin: 15px;
+				@media screen and (max-width: 650px) {
+					font-size: 10px;
+					margin: 10px;
 					margin-left: 0;
-					color: white;
-					font-size: 15px;
-					text-transform: uppercase;
-					letter-spacing: 2.5px;
-					font-family: 'Montserrat', sans-serif;
-					@media screen and (max-width: 1650px) {
-						font-size: 13px;
-					}
-					@media screen and (max-width: 650px) {
-						font-size: 10px;
-						margin: 10px;
-						margin-left: 0;
-					}
 				}
 			}
 		}
+	}
 
-		&:hover {
-			cursor: pointer;
-			background-color: #950037;
-			border: 2px solid #ff005d;
-		}
+	&:hover:not(:disabled) {
+		cursor: pointer;
+		background-color: #950037;
+		border: 2px solid #ff005d;
+	}
 
-		&:focus {
-			border: 2px solid #ff005d;
-		}
+	&:focus {
+		border: 2px solid #ff005d;
+	}
+
+	&:disabled {
+		border: 2px solid #030020;
+		background-color: #030020;
 	}
 }
 
 // The fancy button animation (Shutter Out Vertical) //
 // Code from Hover.css, https://ianlunn.github.io/Hover/. (Stripped down for this purpose)
 // https://github.com/IanLunn/Hover/blob/b6e9a10c9a23db4926779cf00b320c2ee1a4f507/css/hover.css#L1872-L1912
-.hvr-shutter-out-vertical {
+.hvr-shutter-out-vertical:not(:disabled) {
 	transform: perspective(1px) translateZ(0);
 }
-.hvr-shutter-out-vertical:before {
+.hvr-shutter-out-vertical:not(:disabled):before {
 	content: '';
 	position: absolute;
 	z-index: -1;
@@ -187,7 +198,7 @@ a.Button {
 	transition-duration: 0.3s;
 	transition-timing-function: ease-out;
 }
-.hvr-shutter-out-vertical:hover:before,
+.hvr-shutter-out-vertical:hover:not(:disabled):before,
 .hvr-shutter-out-vertical:focus:before,
 .hvr-shutter-out-vertical:active:before {
 	transform: scaleY(1);
@@ -199,15 +210,13 @@ footer {
 	align-items: center;
 	padding: 20px;
 	color: white;
+	background: #030020;
 	font-family: 'Nunito', sans-serif;
 }
 
 // Background for each section //
 
 .Background {
-	object-fit: cover;
-	object-position: bottom;
-	width: 100vw;
 	height: fit-content !important;
 }
 

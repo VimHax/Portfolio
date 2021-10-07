@@ -48,6 +48,9 @@
 		top: 0;
 		right: 0px;
 		font-size: 20px;
+		&:hover {
+			margin: 0;
+		}
 	}
 }
 
@@ -82,7 +85,7 @@
 		}
 	}
 
-	button.Menu {
+	#menu {
 		display: none;
 		position: absolute;
 		top: 0;
@@ -94,7 +97,7 @@
 		opacity: 0;
 		animation-delay: 0.75s;
 
-		@media screen and (max-width: 650px) {
+		@media screen and (max-width: 750px) {
 			display: block;
 		}
 
@@ -115,7 +118,7 @@
 		width: 100vw;
 		font-family: 'Nunito', sans-serif;
 
-		@media screen and (max-width: 650px) {
+		@media screen and (max-width: 750px) {
 			display: none;
 		}
 

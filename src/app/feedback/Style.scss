@@ -1,0 +1,95 @@
+.Feedback {
+	width: 100vw;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 0vh;
+	padding-bottom: 20vh;
+	background-color: #030030;
+
+	.Content {
+		width: 50%;
+		z-index: 1;
+
+		@media screen and (max-width: 1400px) {
+			width: 75%;
+		}
+
+		@media screen and (max-width: 1150px) {
+			width: 80%;
+		}
+
+		@media screen and (max-width: 800px) {
+			width: 90%;
+		}
+
+		.Title {
+			color: white;
+			font-size: 60px;
+			text-transform: uppercase;
+			letter-spacing: 15px;
+			font-family: 'Montserrat', sans-serif;
+			@media screen and (max-width: 1650px) {
+				font-size: 50px;
+				letter-spacing: 13px;
+			}
+			@media screen and (max-width: 650px) {
+				font-size: 35px;
+				letter-spacing: 13px;
+			}
+		}
+
+		.SubTitle {
+			color: #ff005d;
+			font-size: 30px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			font-family: 'Montserrat', sans-serif;
+			@media screen and (max-width: 1650px) {
+				font-size: 20px;
+				letter-spacing: 2px;
+			}
+		}
+
+		.LetterCount {
+			color: #ff0062;
+			font-size: 20px;
+			font-family: 'Roboto Mono', sans-serif;
+			@media screen and (max-width: 1650px) {
+				font-size: 17px;
+			}
+			@media screen and (max-width: 650px) {
+				font-size: 15px;
+			}
+		}
+
+		textarea {
+			width: calc(100% - 34px);
+			height: 200px;
+			margin-top: 5px;
+			margin-bottom: 20px;
+			padding: 10px;
+			background-color: #1900ff;
+			background-color: #030020;
+			border: 2px solid;
+			border-image: linear-gradient(to top left, #1500ff, #ff0062) 30;
+			color: white;
+			resize: none;
+			font-size: 20px;
+			font-family: 'Roboto Mono', sans-serif;
+			@media screen and (max-width: 1650px) {
+				font-size: 17px;
+			}
+			@media screen and (max-width: 650px) {
+				font-size: 15px;
+			}
+
+			&:focus,
+			&:active,
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+}

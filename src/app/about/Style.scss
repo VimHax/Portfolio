@@ -1,14 +1,21 @@
+.AboutContainer {
+	height: fit-content;
+	background-color: #030030;
+}
+
 .About {
 	width: 100vw;
-	position: relative;
+	height: fit-content;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding-top: 10vh;
-	padding-bottom: 10vh;
+	padding-top: 20vh;
+	padding-bottom: 20vh;
+	margin-top: -100vh;
 
 	.Content {
 		width: 50%;
+		z-index: 1;
 
 		@media screen and (max-width: 1400px) {
 			width: 75%;
@@ -31,6 +38,18 @@
 			@media screen and (max-width: 1650px) {
 				font-size: 50px;
 				letter-spacing: 13px;
+			}
+		}
+
+		.SubTitle {
+			color: #ff005d;
+			font-size: 30px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			font-family: 'Montserrat', sans-serif;
+			@media screen and (max-width: 1650px) {
+				font-size: 20px;
+				letter-spacing: 2px;
 			}
 		}
 	}

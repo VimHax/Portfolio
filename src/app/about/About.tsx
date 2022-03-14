@@ -22,6 +22,8 @@ export default function About(): JSX.Element {
 					<br />
 					<div className="SubTitle">Who am I?</div>
 					<br />
+					<img src="/me.webp" alt="" className="Me" />
+					<br />
 					<p>
 						<b>Hello there!</b> On the internet I usually go by the name{' '}
 						<b>VimHax</b>. (Or, even more commonly, just <b>Vim</b> which is an
